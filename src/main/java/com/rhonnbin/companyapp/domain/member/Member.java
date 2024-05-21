@@ -16,6 +16,7 @@ public class Member {
     private String teamName;
     private boolean role;
     private LocalDate birthday;
+    private LocalDate workStartDate;
 
     protected Member() {
     }
@@ -25,6 +26,7 @@ public class Member {
         this.teamName = request.getTeamName();
         this.role = request.isRole();
         this.birthday = request.getBirthday();
+        this.workStartDate = request.getWorkStartDate();
     }
 
     public Long getId() {
@@ -45,5 +47,9 @@ public class Member {
 
     public LocalDate getBirthday() {
         return birthday;
+    }
+
+    public LocalDate getWorkStartDate() {
+        return workStartDate;
     }
 }

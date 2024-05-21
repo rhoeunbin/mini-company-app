@@ -9,12 +9,14 @@ public class MemberResponse {
     private String name;
     private boolean role;
     private LocalDate birthday;
+    private LocalDate workStartDate;
 
-    public MemberResponse(long id, String name, boolean role, LocalDate birthday) {
+    public MemberResponse(long id, String name, boolean role, LocalDate birthday, LocalDate workStartDate) {
         this.id = id;
         this.name = name;
         this.role = role;
         this.birthday = birthday;
+        this.workStartDate = LocalDate.now();
     }
 
     public MemberResponse(Member member) {
@@ -22,6 +24,7 @@ public class MemberResponse {
         this.name = member.getName();
         this.role = member.isRole();
         this.birthday = member.getBirthday();
+        this.workStartDate = LocalDate.now();
     }
 
     public long getId() {
@@ -38,6 +41,10 @@ public class MemberResponse {
 
     public LocalDate getBirthday() {
         return birthday;
+    }
+
+    public LocalDate getWorkStartDate() {
+        return workStartDate;
     }
 }
 

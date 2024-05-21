@@ -7,6 +7,7 @@ public class MemberCreateRequest {
     private String teamName;
     private boolean role;
     private LocalDate birthday;
+    private LocalDate workStartDate;
 
     public String getName() {
         return name;
@@ -22,5 +23,9 @@ public class MemberCreateRequest {
 
     public LocalDate getBirthday() {
         return birthday;
+    }
+
+    public LocalDate getWorkStartDate() {
+        return workStartDate;
     }
 }
