@@ -23,4 +23,12 @@ public class MemberService {
     public void saveMember(MemberCreateRequest request){
         memberRepository.save(new Member(request));
     }
+
+    // 멤버 조회
+    @Transactional
+    public List<MemberResponse> getMembers(){
+        return memberRepository.findAll().stream()
+                .map(MemberResponse::new)
+                .collect(Collectors.toList());
+    }
 }

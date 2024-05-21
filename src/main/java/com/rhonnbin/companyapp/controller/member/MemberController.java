@@ -25,4 +25,10 @@ public class MemberController {
     public void saveMember(@RequestBody MemberCreateRequest request) {
         memberService.saveMember(request);
     }
+
+    // 멤버 조회
+    @GetMapping("/member")
+    public List<MemberResponse> getMembers(){
+        return memberService.getMembers();
+    }
 }
