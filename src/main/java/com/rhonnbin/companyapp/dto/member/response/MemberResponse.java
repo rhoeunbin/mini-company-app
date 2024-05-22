@@ -16,7 +16,7 @@ public class MemberResponse {
         this.name = name;
         this.role = role;
         this.birthday = birthday;
-        this.workStartDate = LocalDate.now();
+        this.workStartDate = workStartDate;
     }
 
     public MemberResponse(Member member) {
@@ -24,7 +24,7 @@ public class MemberResponse {
         this.name = member.getName();
         this.role = member.isRole();
         this.birthday = member.getBirthday();
-        this.workStartDate = LocalDate.now();
+        this.workStartDate = member.getWorkStartDate();
     }
 
     public long getId() {

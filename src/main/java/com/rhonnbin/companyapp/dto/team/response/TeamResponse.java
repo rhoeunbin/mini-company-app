@@ -1,5 +1,7 @@
 package com.rhonnbin.companyapp.dto.team.response;
 
+import com.rhonnbin.companyapp.domain.team.Team;
+
 public class TeamResponse {
     private Long id;
     private String name;
@@ -11,6 +13,13 @@ public class TeamResponse {
         this.name = name;
         this.manager = manager;
         this.memberCount = memberCount;
+    }
+
+    public TeamResponse(Team team) {
+        this.id = team.getId();
+        this.name = team.getName();
+        this.manager = team.getMenager();
+        this.memberCount = team.getMemberCount();
     }
 
     public Long getId() {
