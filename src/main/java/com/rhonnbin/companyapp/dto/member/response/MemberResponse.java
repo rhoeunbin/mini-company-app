@@ -7,13 +7,15 @@ import java.time.LocalDate;
 public class MemberResponse {
     private long id;
     private String name;
+    private String teamName;
     private boolean role;
     private LocalDate birthday;
     private LocalDate workStartDate;
 
-    public MemberResponse(long id, String name, boolean role, LocalDate birthday, LocalDate workStartDate) {
+    public MemberResponse(long id, String name, String teamName, boolean role, LocalDate birthday, LocalDate workStartDate) {
         this.id = id;
         this.name = name;
+        this.teamName = teamName;
         this.role = role;
         this.birthday = birthday;
         this.workStartDate = workStartDate;
@@ -22,7 +24,8 @@ public class MemberResponse {
     public MemberResponse(Member member) {
         this.id = member.getId();
         this.name = member.getName();
-        this.role = member.isRole();
+        this.teamName = getTeamName();
+        this.role = true;
         this.birthday = member.getBirthday();
         this.workStartDate = member.getWorkStartDate();
     }
@@ -33,6 +36,10 @@ public class MemberResponse {
 
     public String getName() {
         return name;
+    }
+
+    public String getTeamName() {
+        return teamName;
     }
 
     public boolean isRole() {

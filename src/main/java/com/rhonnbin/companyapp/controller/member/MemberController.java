@@ -1,13 +1,11 @@
 package com.rhonnbin.companyapp.controller.member;
 
+import com.rhonnbin.companyapp.domain.member.Member;
 import com.rhonnbin.companyapp.domain.member.MemberRepository;
 import com.rhonnbin.companyapp.dto.member.request.MemberCreateRequest;
 import com.rhonnbin.companyapp.dto.member.response.MemberResponse;
 import com.rhonnbin.companyapp.service.member.MemberService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +22,12 @@ public class MemberController {
     @PostMapping("/member")
     public void saveMember(@RequestBody MemberCreateRequest request) {
         memberService.saveMember(request);
+    }
+
+    // 멤버를 특정 팀에 추가
+    @PostMapping("/member/{teamId}")
+    public void addMemberToTeam(@PathVariable Long teamId, @RequestBody Member member) {
+        memberService.addMemberToTeam(teamId, member);
     }
 
     // 멤버 조회

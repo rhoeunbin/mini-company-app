@@ -4,21 +4,21 @@ import com.rhonnbin.companyapp.domain.team.Team;
 
 public class TeamResponse {
     private Long id;
-    private String name;
+    private String teamName;
     private String manager;
     private int memberCount;
 
-    public TeamResponse(Long id, String name, String manager, int memberCount) {
+    public TeamResponse(Long id, String teamName, String manager, int memberCount) {
         this.id = id;
-        this.name = name;
-        this.manager = manager;
+        this.teamName = teamName;
+        this.manager = null;
         this.memberCount = memberCount;
     }
 
     public TeamResponse(Team team) {
         this.id = team.getId();
-        this.name = team.getName();
-        this.manager = team.getMenager();
+        this.teamName = team.getTeamName();
+        this.manager = team.getManager();
         this.memberCount = team.getMemberCount();
     }
 
@@ -26,8 +26,8 @@ public class TeamResponse {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getTeamName() {
+        return teamName;
     }
 
     public String getManager() {
